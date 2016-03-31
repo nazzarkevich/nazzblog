@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'execjs'
 
+gem 'devise', '~> 3.4.0'
+
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'twitter-bootstrap-rails'
 
