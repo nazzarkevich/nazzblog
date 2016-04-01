@@ -52,8 +52,10 @@
 				<button class="button">Log out</button>
 				<% end %>
 			</div>
-		<% else %>					
-				<button class="button">Log in</button>			
+		<% else %>
+				<%= link_to new_user_session_path do%>		
+				<button class="button">Log in</button>
+				<% end %>		
 		<% end %>
 		</div>
 
