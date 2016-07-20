@@ -1,29 +1,34 @@
-<h2>Sign up</h2>
+<div class="col-md-6 col-md-push-3">
+  <%= provide(:title, "Sign Up") %>
+  <center><h1 >Sign Up</h1></center>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <%= form_for(resource, as: resource_name, url: user_registration_path) do |f| %>
+  <div id="error_explanation" class="col-md-12">
+    <%= devise_error_messages! %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @validatable %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+  <div class="col-md-12">
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+    <div class="field">
+      <%= f.email_field :email, placeholder: "Email", :class => "form-control" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
+    <div class="field">
+      <%= f.password_field :password, autocomplete: "off", placeholder: "Password", :class => "form-control" %>
+    </div>
 
-<%= render "devise/shared/links" %>
+    <div class="field">
+      <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Password Confirmation", :class => "form-control" %>
+    </div>
+
+    <div class="actions shared_links">
+      <%= f.submit "Sign up", class: "btn btn-large btn-primary" %>
+    </div>
+
+    <div>
+      <%= render "devise/shared/links" %>
+    </div>
+
+  </div>
+  <% end %>  
+</div>
